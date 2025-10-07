@@ -20,10 +20,11 @@ schooltool-tweaks/
 ├─ observe.js
 └─ README.md
 
-Install (load unpacked)
+<u>Install (load unpacked)</u>
 
 Clone this repo.
-git clone https://github.com/<you>/schooltool-tweaks.git
+git clone https://github.com/rlawry/schooltool-tweaks.git
+
 Open brave://extensions or chrome://extensions.
 Enable Developer mode.
 Click Load unpacked → select the cloned folder.
