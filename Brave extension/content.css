@@ -1,0 +1,85 @@
+/* Pure-CSS path (Chromium supports :has). */
+.container-fluid:has(> .grading-header-breadcrumbs) {
+  padding-left: 2.5rem !important; /* adjust to taste */
+  padding-bottom: 2.5rem !important
+}
+
+/* Fallback path driven by JS class (see observe.js). */
+.st-wide-left {
+  padding-left: 2.5rem !important;
+  padding-bottom: 2.5rem !important
+}
+
+/* Optional: keep nearby UI aligned with the wider gutter. */
+.k-tabstrip,
+.k-grid-aria-root,
+.k-grid-header-wrap,
+.k-grid-content {
+  padding-left: 2.5rem !important;
+  padding-bottom: 2.5rem !important
+}
+
+/* Scope to gradebook editor edit cells */
+.telerik-grid-gradebook-editor .k-grid-edit-cell .h-100 {
+  position: relative;              /* anchor for absolute button */
+}
+
+.telerik-grid-gradebook-editor .k-grid-edit-cell .d-flex.align-items-center {
+  padding-right: 2rem;             /* reserve space on the right for the button */
+  gap: .25rem;
+  min-height: 2.2rem;              /* match existing inline height */
+}
+
+/* Lift the existing button up into the same row */
+.telerik-grid-gradebook-editor .k-grid-edit-cell .text-truncate {
+  position: absolute;
+  top: 0;
+  right: .25rem;
+  height: 2.2rem;
+  display: flex;
+  align-items: center;
+  z-index: 1;
+}
+
+/* Tidy the button size so it fits inline */
+.telerik-grid-gradebook-editor .k-grid-edit-cell .text-truncate .k-button {
+  height: 1.6rem;
+  padding: 0 .25rem;
+}
+
+/* Pale yellow on non-interactive cells in column index 1 */
+/* Non-interactive cells in column 1 */
+.telerik-grid-gradebook-editor td.k-table-td[data-col-index="1"]:not(.k-grid-edit-cell):not(:has(input,button,select,textarea,a,.k-button)) {
+  background-color: #fff8d6 !important;
+  cursor: not-allowed;
+}
+
+/* Fallback for JS-marked cells */
+.telerik-grid-gradebook-editor td.k-table-td.st-no-click {
+  background-color: #fff8d6 !important;
+  cursor: not-allowed;
+}
+
+.telerik-grid-gradebook-editor td.k-table-td[data-col-index="1"]:not(.k-grid-edit-cell):not(:has(input,button,select,textarea,a,.k-button)) {
+  background-color: #fff8d6 !important;   /* pale yellow */
+}
+
+/* Fallback when JS adds a marker class */
+.telerik-grid-gradebook-editor td.k-table-td.st-no-click {
+  background-color: #fff8d6 !important;
+}
+
+/* Visual hint */
+.telerik-grid-gradebook-editor td.k-table-td[data-col-index="1"]:hover,
+.telerik-grid-gradebook-editor td.k-table-td.st-no-click:hover {
+  cursor: not-allowed;
+}
+
+/* Remove the "ID: 123..." next to each student name */
+.telerik-grid-gradebook-editor h4[id^="H4_StudentName_"] + h6 {
+  display: none !important; /* or use visibility:hidden to keep the space */
+}
+
+/* content.css 
+.telerik-grid-gradebook-editor .k-grid-header .icon.arrows-right-left { display:none !important; }
+*/

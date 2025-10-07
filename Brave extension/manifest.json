@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "SchoolTool restyle",
+  "version": "0.1.5",
+  "description": "Make SchoolTool Goodlier.",
+  "action": { "default_popup": "popup.html" },
+  "permissions": ["storage"],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.schooltool.com/*",
+        "*://*/SchoolTool/*",
+        "*://*/schooltool/*"
+      ],
+      "css": ["content.css"],
+      "js": ["observe.js"],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ]
+}
